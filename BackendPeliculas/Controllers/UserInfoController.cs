@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Identity;
 
 namespace BackendPeliculas.Controllers
 {
@@ -10,8 +12,9 @@ namespace BackendPeliculas.Controllers
         public class UserInfoController : ControllerBase
         {
             private readonly IHttpContextAccessor contextAccessor;
+            //private readonly UserManager<ApplicationUser> userManager;
 
-            public UserInfoController(IHttpContextAccessor contextAccessor)
+        public UserInfoController(IHttpContextAccessor contextAccessor)
             {
                 this.contextAccessor = contextAccessor;
             }
@@ -21,17 +24,21 @@ namespace BackendPeliculas.Controllers
             {
                 var user = contextAccessor.HttpContext.User;
 
-                return Ok(new
+            return Ok(new
                 {
                     Claims = user.Claims.Select(s => new
                     {
                         s.Type,
-                        s.Value
+                        s.Value,
+                        
                     }).ToList(),
                     user.Identity.Name,
                     IsAuthenticated = user.Identity.IsAuthenticated,
-                    AuthenticationType = user.Identity.AuthenticationType
-                });
+                    AuthenticationType = user.Identity.AuthenticationType,
+                     // Recuperar el rol del usuario
+
+
+            });
             }
         }
     

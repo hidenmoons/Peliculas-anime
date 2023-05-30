@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "40703b27-1028-4775-a714-b438a27d16d5": {
+      "ProjectGuid": "40703b27-1028-4775-a714-b438a27d16d5",
+      "DisplayName": "BackendPeliculas",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
