@@ -1,6 +1,6 @@
 ﻿namespace BackendPeliculas.Interfaces
 {
-    public interface User
+    public interface IUser
     {
         public string Email { get; set; }
         public string FirstName { get; set; }

@@ -21,16 +21,16 @@ namespace BackendPeliculas.Controllers
             this.userManager= userManager;
         }
         [HttpPost]
-        public async Task<IActionResult> Create_user(UserManager<User> userManager) 
+        public async Task<IActionResult> Create_user(usermodel user) 
         {
             var newUser = new User
             {
-                Email = "test@demo.com",
-                FirstName = "Test",
-                LastName = "User",
-                UserName = "test.demo"
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                UserName = user.UserName,
             };
-            var result = await userManager.CreateAsync(newUser,"12345678");
+            var result = await userManager.CreateAsync(newUser,user.Password);
             return Ok(result);
         }
     }
