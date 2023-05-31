@@ -1,6 +1,5 @@
 using BackendPeliculas.Models;
 using BackendPeliculas.Entities;
-using BackendPeliculas.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
